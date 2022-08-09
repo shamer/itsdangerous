@@ -21,11 +21,7 @@ export enum KeyDerivation {
   None = 'none',
 }
 
-const deriveKey = (derivation: KeyDerivation, salt: string, secretKey: string): string => {
-  return secretKey
-}
-
-const defaultDigestMethod = (data: BinaryLike): NodeJS.ArrayBufferView => {
+export const defaultDigestMethod = (data: BinaryLike): NodeJS.ArrayBufferView => {
   const hash = crypto.createHash('sha1')
   hash.update(data)
   return hash.digest()
@@ -83,7 +79,12 @@ export class Signer {
     } else if (this.keyDerivation == KeyDerivation.DjangoConcat) {
       return this.digestMethod(this.salt + 'signer' + secretKey)
     } else if (this.keyDerivation == KeyDerivation.HMAC) {
-      throw new UnimplementedError('HMAC key direvation not implemented')
+      if (this.digestMethod !== defaultDigestMethod) {
+        throw new UnimplementedError("hmac key derivation not unimplemented with non sha1 digest")
+      }
+      const hmac = crypto.createHmac('sha1', secretKey)
+      hmac.update(this.salt)
+      return hmac.digest()
     } else if (this.keyDerivation == KeyDerivation.None) {
       return new TextEncoder().encode(secretKey)
     } else {
