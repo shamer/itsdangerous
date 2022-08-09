@@ -2,7 +2,11 @@
   "name": "itsdangerous",
   "version": "0.0.1",
   "description": "Javascript port of pallet/itsdangerous python cookie serializer + signer",
-  "main": "lib/index.ts",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "./build"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shamer/itsdangerous"

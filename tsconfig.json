@@ -2,6 +2,8 @@
   "compileOnSave": true,
   "compilerOptions": {
     "module": "commonjs",
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "strict": true,
     "baseUrl": "./",
     "outDir": "build",
