@@ -1,5 +1,5 @@
-const serializer = require('./serializer')
-const signer = require('./signer')
+const serializer = require('../lib/serializer')
+const signer = require('../lib/signer')
 
 test('compressed JSON cookie value from flask', () => {
   const cookieVal = '.eJwtjrtuAjEQAP_F9RVr7_pxdCAQRRqkRBddhez1LiAhinsIJRH_jotMOZpi_sxZJ5mvZrNMq3TmfKtmYyx5rKFyQEGuwkBJozhpvpImBN-MRNC-pBgTBZ8ThuRdrtmTdVYzgrUs4BCoKDgtFUp1Qr0TXwowcdEWIJMEZfDoAAAbUnownZmXvEhb-R62P3s9-rGfhxOPjwN_Pod7_N19fTxPlxaus0z_1-b1BvjtO9g.YvG-YQ.y71Yawu7ZpBG93sjBtkq1PKKSU0'

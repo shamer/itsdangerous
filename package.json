@@ -2,7 +2,7 @@
   "name": "itsdangerous",
   "version": "0.0.1",
   "description": "Javascript port of pallet/itsdangerous python cookie serializer + signer",
-  "main": "index.ts",
+  "main": "lib/index.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/shamer/itsdangerous"
@@ -16,7 +16,8 @@
   "author": "Stephen Hamer <stephen.hamer@gmail.com>",
   "license": "BSD",
   "dependencies": {
-    "js-base64": "^3.7.2"
+    "js-base64": "^3.7.2",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@types/jest": "^28.1.6",
